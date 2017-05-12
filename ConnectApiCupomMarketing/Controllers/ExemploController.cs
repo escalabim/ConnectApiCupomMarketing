@@ -48,8 +48,7 @@ namespace ConectApiCupomMarketing.Controllers
             //    item.date;
             //    item.name_coupon;
             //    item.code_coupon;
-            //    item.ip;
-            //    item.mac;
+            //    item.ip;            
             //}
 
             return View();
@@ -72,8 +71,7 @@ namespace ConectApiCupomMarketing.Controllers
             //    item.date;
             //    item.name_coupon;
             //    item.code_coupon;
-            //    item.ip;
-            //    item.mac;
+            //    item.ip;            
             //}
 
             return View();
