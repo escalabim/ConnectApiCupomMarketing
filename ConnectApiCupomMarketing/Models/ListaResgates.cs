@@ -13,7 +13,6 @@ namespace ConectApiCupomMarketing.Models
         public string date { get; set; }
         public string name_coupon { get; set; }
         public string code_coupon { get; set; }
-        public string ip { get; set; }
-        public string mac { get; set; }
+        public string ip { get; set; }        
     }
 }
