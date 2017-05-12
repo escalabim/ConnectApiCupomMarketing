@@ -64,8 +64,7 @@ Na classe "ExemploController.cs" está o exemplo para os valores das requisiçõ
             //    item.date;
             //    item.name_coupon;
             //    item.code_coupon;
-            //    item.ip;
-            //    item.mac;
+            //    item.ip;            
             //}
 
             return View();
@@ -88,8 +87,7 @@ Na classe "ExemploController.cs" está o exemplo para os valores das requisiçõ
             //    item.date;
             //    item.name_coupon;
             //    item.code_coupon;
-            //    item.ip;
-            //    item.mac;
+            //    item.ip;            
             //}
 
             return View();
@@ -180,8 +178,7 @@ Classes POCO criadas:
         public string date { get; set; }
         public string name_coupon { get; set; }
         public string code_coupon { get; set; }
-        public string ip { get; set; }
-        public string mac { get; set; }
+        public string ip { get; set; }        
     }
     
     public class ListaValidacoes
@@ -192,8 +189,7 @@ Classes POCO criadas:
         public string date { get; set; }
         public string name_coupon { get; set; }
         public string code_coupon { get; set; }
-        public string ip { get; set; }
-        public string mac { get; set; }
+        public string ip { get; set; }       
     }
     
     public class ResgatarCupom
