@@ -290,8 +290,7 @@ Content-Type:application/json
                                     "date": "10/02/2017",
                                     "name_coupon": "50% de desconto em toda a loja ",
                                     "code_coupon": "855204a4",
-                                    "ip": "203.29.999.99",
-                                    "mac": "485A39386F79"
+                                    "ip": "203.29.999.99"                                    
                                 },
 
                                 {
@@ -301,8 +300,8 @@ Content-Type:application/json
                                     "date": "10/02/2017",
                                     "name_coupon": "10% de desconto em toda a loja",
                                     "code_coupon": "69380e6f",
-                                    "ip": "202.29.999.99",
-                                    "mac": "410A39536F79"
+                                    "ip": "202.29.999.99"
+                                    
                                 },
 
                                 {
@@ -312,8 +311,8 @@ Content-Type:application/json
                                     "date": "10/02/2017",
                                     "name_coupon": "25% de desconto em produtos naturais",
                                     "code_coupon": "69380e9f",
-                                    "ip": "201.29.999.99",
-                                    "mac": "417A39536F78"
+                                    "ip": "201.29.999.99"
+                                  
                                 }
 
                              ]
@@ -401,8 +400,7 @@ Content-Type:application/json
                                   "date": "11/02/2017",
                                   "name_coupon": "50% de desconto em toda a loja ",
                                   "code_coupon": "405200a4",
-                                  "ip": "178.999.75.2",
-                                  "mac": "487A40386F79"
+                                  "ip": "178.999.75.2"                                  
                                 },
 
                                 {
@@ -412,8 +410,8 @@ Content-Type:application/json
                                   "date": "11/02/2017",
                                   "name_coupon": "40% de desconto em toda a loja",
                                   "code_coupon": "17380e8f",
-                                  "ip": "177.29.999.99",
-                                  "mac": "210A39536F79"
+                                  "ip": "177.29.999.99"
+                               
                                 },
 
                                 {
@@ -423,8 +421,8 @@ Content-Type:application/json
                                   "date": "11/02/2017",
                                   "name_coupon": "40% de desconto em toda a loja",
                                   "code_coupon": "39381e8f",
-                                  "ip": "208.29.999.99",
-                                  "mac": "810A39536F79"
+                                  "ip": "208.29.999.99"
+                                  
                                }
 
                              ]
