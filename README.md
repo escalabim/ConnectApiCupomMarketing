@@ -30,11 +30,12 @@ Exemplo de consumo da API Cupom Marketing em ASP.NET MVC C#
 
 Na classe "ExemploController.cs" está o exemplo para os valores das requisições.
 
-           
+       const string api_key = "Sua chave api_key aqui";
+          
        public async Task<ActionResult> ListarCoupons()
         {
             string Valores = string.Empty;
-            string result = await ConsumingAPI.Get(string.Format("http://apilive.cupommarketing.com/api-v1/coupons/{0}", code_id));
+            string result = await ConsumingAPI.Get(string.Format("http://apilive.cupommarketing.com/api-v1/coupons/{0}", api_key));
             List<ListaCupons> ListValues = new JavaScriptSerializer().Deserialize<List<ListaCupons>>(result);
 
             //foreach (var item in ListValues)
@@ -52,7 +53,7 @@ Na classe "ExemploController.cs" está o exemplo para os valores das requisiçõ
         public async Task<ActionResult> ListarResgates()
         {
             string Valores = string.Empty;
-            string result = await ConsumingAPI.Get(string.Format("http://apilive.cupommarketing.com/api-v1/rescue/{0}", code_id));
+            string result = await ConsumingAPI.Get(string.Format("http://apilive.cupommarketing.com/api-v1/rescue/{0}", api_key));
             List<ListaResgates> ListValues = new JavaScriptSerializer().Deserialize<List<ListaResgates>>(result);
 
 
@@ -75,7 +76,7 @@ Na classe "ExemploController.cs" está o exemplo para os valores das requisiçõ
         public async Task<ActionResult> ListarValidacoes()
         {
             string Valores = string.Empty;
-            string result = await ConsumingAPI.Get(string.Format("http://apilive.cupommarketing.com/api-v1/validation/{0}", code_id));
+            string result = await ConsumingAPI.Get(string.Format("http://apilive.cupommarketing.com/api-v1/validation/{0}", api_key));
             List<ListaValidacoes> ListValues = new JavaScriptSerializer().Deserialize<List<ListaValidacoes>>(result);
 
 
@@ -98,7 +99,7 @@ Na classe "ExemploController.cs" está o exemplo para os valores das requisiçõ
         {
             ResgatarCupom Reg = new ResgatarCupom();
 
-            Reg.code_id = code_id;
+            Reg.api_key = api_key;
             Reg.email = "";    // opcional  
             Reg.phone = "";    // opcional 
             Reg.name = "";        // obrigatório
@@ -118,13 +119,15 @@ Na classe "ExemploController.cs" está o exemplo para os valores das requisiçõ
             return View();
         }
 
-        // GET: / Exibir um resumo do cupom, não é necessario passar o code_id
+        // POST: / Exibir um resumo do cupom de desconto:
         public async Task<ActionResult> ResumoCupom()
         {
+           RequestResumoCupom Coupon = new RequestResumoCupom();
 
-            string CodigoCupomDesconto = ""; // Você deve passar o codigo do cupom de desconto;
+           Coupon.api_key = api_key;
+           Coupon.code_coupon = "CODIGO DO CUPOM DE DESCONTO"; //
 
-            string result = await ConsumingAPI.Get(string.Format("http://apilive.cupommarketing.com/api-v1/couponsummary/{0}",CodigoCupomDesconto));
+            string result = await ConsumingAPI.Post("http://apilive.cupommarketing.com/api-v1/couponsummary",Coupon);
             List<ResumoCupom> ListValues = new JavaScriptSerializer().Deserialize<List<ResumoCupom>>(result);
 
 
@@ -143,7 +146,7 @@ Na classe "ExemploController.cs" está o exemplo para os valores das requisiçõ
         {
             ValidarCupom Val = new ValidarCupom();
 
-            Val.code_id = code_id;
+            Val.api_key = api_key;
             Val.code_coupon = "";  //  obrigatório, você deve passar o código do cupom para validar.
 
             string result = await ConsumingAPI.Post("http://apilive.cupommarketing.com/api-v1/validationcoupon", Val);
@@ -194,7 +197,7 @@ Classes POCO criadas:
     
     public class ResgatarCupom
     {
-        public string code_id { get; set; }
+        public string api_key { get; set; }
         public string name { get; set; }
         public string phone { get; set; }
         public string email { get; set; }
@@ -224,7 +227,13 @@ Classes POCO criadas:
     
     public class ValidarCupom
     {
-        public string code_id { get; set; }
+        public string api_key { get; set; }
+        public string code_coupon { get; set; }
+    }
+    
+      public class RequestResumoCupom
+    {
+        public string api_key { get; set; }
         public string code_coupon { get; set; }
     }
 
@@ -232,14 +241,14 @@ Classes POCO criadas:
 <h1>Documentação geral da API Cupom Marketing V1</h1>
 
 <h2>Atenção</h2>
-Para algumas as requisições será preciso que você forneça seu código de identificação<strong> code_id</strong>, não compartilhe esse com ninguém e mantenha em lugar seguro.
+Para algumas as requisições será preciso que você forneça seu código de identificação<strong> api_key</strong>, não compartilhe esse com ninguém e mantenha em lugar seguro.
 
 
 
 <h1><strong>1. Listar todas as campanhas de cupons:</strong></h1>
 
 <h2>GET</h2>
-  http://apilive.cupommarketing.com/api-v1/coupons/code_id<br/>
+  http://apilive.cupommarketing.com/api-v1/coupons/api_key<br/>
   
  <br/> 
 EXEMPLO DE RESPOSTA:
@@ -272,7 +281,7 @@ Content-Type:application/json
 <h1>2. Listar todos os resgates dos cupons:</h1>
 
 <h2>GET</h2>
-http://apilive.cupommarketing.com/api-v1/rescue/code_id
+http://apilive.cupommarketing.com/api-v1/rescue/api_key
 
 <br/>
 EXEMPLO DE RESPOSTA:
@@ -322,7 +331,7 @@ Content-Type:application/json
 
 Os parâmetros email e phone são importantes para você popular a sua base de dados e trabalhar posteriormente com a sua lista de contatos.
 
-"code_id" - Preenchimento <strong>obrigatório</strong>, seu código de identificação.
+"api_key" - Preenchimento <strong>obrigatório</strong>, seu código de identificação.
 
 "name" - Tamanho máximo de caracteres 25, preenchimento <strong>obrigatório</strong>.
 
@@ -343,7 +352,7 @@ BODY
 
 
                                 {
-                                   "code_id":"MKTe0d25714a0000",
+                                   "api_key":"MKTe0d25714a0000",
                                    "name":"maria",
                                    "phone":"02199955588",
                                    "email":"exemplo@exemplo.com",
@@ -382,7 +391,7 @@ O parâmetro result retorna 1 ou 0 sendo 1 sucesso e 0 falha.
 <h1>4. Listar todas as validações dos cupons:</h1>
 
 <h2>GET</h2>
-http://apilive.cupommarketing.com/api-v1/validation/code_id
+http://apilive.cupommarketing.com/api-v1/validation/api_key
 <br/>
 
 EXEMPLO DE RESPOSTA:
@@ -455,7 +464,7 @@ Content-Type:application/json
 
 <h1>6. Validar um cupom de desconto:</h1>
 
-"code_id" - Preenchimento <strong>obrigatório</strong>, seu código de identificação.
+"api_key" - Preenchimento <strong>obrigatório</strong>, seu código de identificação.
 
 "code_coupon " - Preenchimento <strong>obrigatório</strong>, código do cupom de desconto.
 
@@ -469,7 +478,7 @@ BODY
 
 
                               {
-                               "code_id":" MKTe0d25714a0000",
+                               "api_key":" MKTe0d25714a0000",
                                "code_coupon":"28b4cd69"
                               }
 
