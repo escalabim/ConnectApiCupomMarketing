@@ -330,7 +330,7 @@ Content-Type:application/json
 
 Os parâmetros email e phone são importantes para você preencher a sua base de dados e trabalhar posteriormente com a sua lista de contatos.
 
-"api_key" - Preenchimento <strong>obrigatório</strong>, seu código de identificação.
+"api_key" - Preenchimento <strong>obrigatório</strong>, sua chave.
 
 "name" - Tamanho máximo de caracteres 25, preenchimento <strong>obrigatório</strong>.
 
@@ -438,7 +438,7 @@ Content-Type:application/json
 
 <h1>5. Exibir um resumo do cupom:</h1>
 
-"api_key" - Preenchimento <strong>obrigatório</strong>, seu código de identificação.
+"api_key" - Preenchimento <strong>obrigatório</strong>, sua chave.
 
 "code_coupon " - Preenchimento <strong>obrigatório</strong>, código do cupom de desconto.
 
@@ -452,7 +452,7 @@ BODY
 
 
                               {
-                               "api_key":" df70e7e4ef304610abc3f9052b263380",
+                               "api_key":"df70e7e4ef304610abc3f9052b263380",
                                "code_coupon":"28b4cd69"
                               }
 
@@ -476,7 +476,7 @@ Content-Type:application/json
 
 <h1>6. Validar um cupom de desconto:</h1>
 
-"api_key" - Preenchimento <strong>obrigatório</strong>, seu código de identificação.
+"api_key" - Preenchimento <strong>obrigatório</strong>, sua chave.
 
 "code_coupon " - Preenchimento <strong>obrigatório</strong>, código do cupom de desconto.
 
@@ -490,7 +490,7 @@ BODY
 
 
                               {
-                               "api_key":" df70e7e4ef304610abc3f9052b263380",
+                               "api_key":"df70e7e4ef304610abc3f9052b263380",
                                "code_coupon":"28b4cd69"
                               }
 
