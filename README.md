@@ -241,8 +241,7 @@ Classes POCO criadas:
 <h1>Documentação geral da API Cupom Marketing V1</h1>
 
 <h2>Atenção</h2>
-Para algumas as requisições será preciso que você forneça seu código de identificação<strong> api_key</strong>, não compartilhe esse com ninguém e mantenha em lugar seguro.
-
+Para todas as requisições será preciso que você forneça sua chave <strong>API KEY</strong>, não compartilhe essa chave com ninguém e mantenha em lugar seguro.
 
 
 <h1><strong>1. Listar todas as campanhas de cupons:</strong></h1>
@@ -439,13 +438,26 @@ Content-Type:application/json
 
 <h1>5. Exibir um resumo do cupom:</h1>
 
-<strong>code_coupon</strong> – é o código do cupom de desconto.
+"api_key" - Preenchimento <strong>obrigatório</strong>, seu código de identificação.
 
+"code_coupon " - Preenchimento <strong>obrigatório</strong>, código do cupom de desconto.
 
 <h2>GET</h2>
 http://apilive.cupommarketing.com/api-v1/couponsummary/code_coupon
 <br/>
 
+EXEMPLO DE REQUISÇÃO:
+
+BODY
+
+
+                              {
+                               "api_key":" MKTe0d25714a0000",
+                               "code_coupon":"28b4cd69"
+                              }
+
+                            
+<br/>
 EXEMPLO DE RESPOSTA:
 
 200
