@@ -328,7 +328,7 @@ Content-Type:application/json
 
 <h1>3. Gerando um código de cupom e fazendo o resgate.</h1>
 
-Os parâmetros email e phone são importantes para você popular a sua base de dados e trabalhar posteriormente com a sua lista de contatos.
+Os parâmetros email e phone são importantes para você preencher a sua base de dados e trabalhar posteriormente com a sua lista de contatos.
 
 "api_key" - Preenchimento <strong>obrigatório</strong>, seu código de identificação.
 
@@ -351,7 +351,7 @@ BODY
 
 
                                 {
-                                   "api_key":"MKTe0d25714a0000",
+                                   "api_key":"df70e7e4ef304610abc3f9052b263380",
                                    "name":"maria",
                                    "phone":"02199955588",
                                    "email":"exemplo@exemplo.com",
@@ -452,7 +452,7 @@ BODY
 
 
                               {
-                               "api_key":" MKTe0d25714a0000",
+                               "api_key":" df70e7e4ef304610abc3f9052b263380",
                                "code_coupon":"28b4cd69"
                               }
 
@@ -490,7 +490,7 @@ BODY
 
 
                               {
-                               "api_key":" MKTe0d25714a0000",
+                               "api_key":" df70e7e4ef304610abc3f9052b263380",
                                "code_coupon":"28b4cd69"
                               }
 
