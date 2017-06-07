@@ -332,11 +332,11 @@ Os parâmetros email e phone são importantes para você preencher a sua base de
 
 "api_key" - Preenchimento <strong>obrigatório</strong>, sua chave.
 
-"name" - Tamanho máximo de caracteres 25, preenchimento <strong>obrigatório</strong>.
+"name" -  Tamanho máximo de 25 caracteres, preenchimento <strong>obrigatório</strong>.
 
-"phone" - Tamanho máximo de caracteres 11, o preenchimento pode ser vazio.
+"phone" - Tamanho máximo de 11 caracteres, o preenchimento pode ser vazio.
 
-"email" - Tamanho máximo de caracteres 50, o preenchimento pode ser vazio.
+"email" - Tamanho máximo de 50 caracteres, o preenchimento pode ser vazio.
 
 "id_coupon" - Preenchimento <strong>obrigatório</strong>, para pegar esse id_coupon, é necessário listar suas campanhas de cupons. Você deve escolher a campanha que deseja resgatar o cupom e gerar um código de desconto.
 
